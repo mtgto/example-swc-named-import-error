@@ -22,26 +22,38 @@ const config = {
   module: {
     rules: [
       {
-        test: /\.(ts|tsx|jsx)$/i,
+        test: /\.(jsx)$/i,
         exclude: ["/node_modules/"],
         use: {
           loader: "swc-loader",
           options: {
             jsc: {
+              // If set "es6" or undefined to module.type, it causes a runtime error. (`Uncaught TypeError: c is not a function`)
+              // If set "commonjs" to module.type, it does not causes an error.
+              /*
+              module: {
+                type: "commonjs",
+              },
+              */
               parser: {
                 syntax: "ecmascript",
                 jsx: true,
               },
               transform: {
                 react: {
-                  runtime: "automatic",
+                  runtime: "classic",
                 },
               },
               minify: {
                 compress: {
-                  defaults: true, // To change false, it does not cause an error.
+                  toplevel: true,
                 },
-                mangle: true,
+                mangle: {
+                  toplevel: false,
+                  keepClassNames: true,
+                  keepFnNames: true,
+                  keepPrivateProps: true,
+                }
               }
             },
           },
@@ -50,7 +62,7 @@ const config = {
     ],
   },
   resolve: {
-    extensions: [".tsx", ".ts", ".js", ".jsx"],
+    extensions: [".tsx", ".ts", ".jsx", ".js"],
   },
 };
 
