@@ -18,9 +18,6 @@ const config = {
     new HtmlWebpackPlugin({
       template: "./src/index.html",
     }),
-
-    // Add your plugins here
-    // Learn more about plugins from https://webpack.js.org/configuration/plugins/
   ],
   module: {
     rules: [
@@ -41,20 +38,15 @@ const config = {
                 },
               },
               minify: {
-                compress: true,
+                compress: {
+                  defaults: true, // To change false, it does not cause an error.
+                },
                 mangle: true,
               }
             },
           },
         },
       },
-      {
-        test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
-        type: "asset",
-      },
-
-      // Add your rules for custom modules here
-      // Learn more about loaders from https://webpack.js.org/loaders/
     ],
   },
   resolve: {
