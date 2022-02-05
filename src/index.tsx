@@ -1,3 +1,14 @@
 import { render } from "react-dom";
+import { useState } from "react";
 
-render(<div>Hello, world!</div>, document.getElementById("root"));
+const App = () => {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <h1>{`Counter ${count}`}</h1>
+    </div>
+  );
+};
+
+render(<App />, document.getElementById("root"));

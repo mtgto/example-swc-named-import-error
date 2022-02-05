@@ -40,6 +40,10 @@ const config = {
                   runtime: "automatic",
                 },
               },
+              minify: {
+                compress: true,
+                mangle: true,
+              }
             },
           },
         },
