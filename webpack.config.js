@@ -6,7 +6,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const isProduction = process.env.NODE_ENV == "production";
 
 const config = {
-  entry: "./src/index.tsx",
+  entry: "./src/index.jsx",
   output: {
     path: path.resolve(__dirname, "dist"),
   },
@@ -22,14 +22,14 @@ const config = {
   module: {
     rules: [
       {
-        test: /\.(ts|tsx)$/i,
+        test: /\.(ts|tsx|jsx)$/i,
         exclude: ["/node_modules/"],
         use: {
           loader: "swc-loader",
           options: {
             jsc: {
               parser: {
-                syntax: "typescript",
+                syntax: "ecmascript",
                 jsx: true,
               },
               transform: {
@@ -50,7 +50,7 @@ const config = {
     ],
   },
   resolve: {
-    extensions: [".tsx", ".ts", ".js"],
+    extensions: [".tsx", ".ts", ".js", ".jsx"],
   },
 };
 
