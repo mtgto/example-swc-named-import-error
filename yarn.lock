@@ -127,7 +127,7 @@
   resolved "https://registry.yarnpkg.com/@swc/core-win32-x64-msvc/-/core-win32-x64-msvc-1.2.136.tgz#94e07fd89cc32e3dc2b00c47d9c2525c4b0eb07f"
   integrity sha512-67HHUWyqI91H4yRFNx03ByTHn9lkGZ19IEzF9GxfGpG7SYjip08hhs6ksbvlQeecHIz/V5undouEIHRwBQJCUA==
 
-"@swc/core@^1.2.135":
+"@swc/core@^1.2.136":
   version "1.2.136"
   resolved "https://registry.yarnpkg.com/@swc/core/-/core-1.2.136.tgz#bb5f189b8199050249dbe1c401eba459caea2e8e"
   integrity sha512-7B3Tyxqn2LHmKhRtUe1FvwEHoQpVCNWhf39KirHIlTs8DMjNKllVws/v5wXXAkKxU9M1Wo/RTpZMJZb40bxn3g==
